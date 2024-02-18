@@ -9,10 +9,10 @@
     datadir: "/mnt/data"
     
   roles:
-  #  - prerequisites
+    - base
     - nextcloud
+    - samba-share
   #   - dotfiles
-  #   - samba
   #   - docker
   #   - raiddatastorage
   #   - raidbackup

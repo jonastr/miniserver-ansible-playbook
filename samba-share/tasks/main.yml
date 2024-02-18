@@ -1,0 +1,11 @@
+---
+- name: Install required deb packages
+  become: yes
+  ansible.builtin.apt:
+    pkg:
+      - samba
+      - avahi-daemon # for advertising samba network share for macos
+      - samba-vfs-modules # for setting required timemachine flags on samba share
+    state: present
+    install_recommends: no
+    update_cache: yes

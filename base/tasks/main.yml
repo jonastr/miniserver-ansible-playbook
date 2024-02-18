@@ -3,9 +3,13 @@
   become: yes
   ansible.builtin.apt:
     pkg:
-    - git
-    - docker-ce
-    - docker-compose-plugin
+      - fdisk
+      - hdparm
+      - rsync
+      - sysstat
+      - e2fsprogs
+      - smartmontools
+      - mdadm
     state: present
     install_recommends: no
     update_cache: yes

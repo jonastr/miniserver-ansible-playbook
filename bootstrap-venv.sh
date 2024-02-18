@@ -1,4 +1,5 @@
- #!bin/zsh
+ #!bin/bash
+ set -ex
  
  python3 -m venv .ansible
  source .ansible/bin/activate

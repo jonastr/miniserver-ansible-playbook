@@ -1,0 +1,19 @@
+- hosts: miniserver
+  pre_tasks:
+    - name: Get host IP
+      shell: hostname -I | awk '{print $1}'
+      register: hostip_cmd
+  vars:
+    hostip: "{{ hostip_cmd.stdout }}"
+    homedir: "{{ lookup('env', 'HOME') }}"
+    datadir: "/mnt/data"
+    
+  roles:
+  #  - prerequisites
+    - nextcloud
+  #   - dotfiles
+  #   - samba
+  #   - docker
+  #   - raiddatastorage
+  #   - raidbackup
+  #   - disk standby services

@@ -1,0 +1,12 @@
+---
+# tasks file for prerequisites
+- name: Install required deb packages
+  become: yes
+  ansible.builtin.apt:
+    pkg:
+    - git
+    - docker-ce
+    - docker-compose-plugin
+    state: present
+    install_recommends: no
+    update_cache: yes
